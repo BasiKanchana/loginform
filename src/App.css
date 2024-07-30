@@ -1,38 +1,126 @@
+/* src/App.css */
 .App {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table, th, td {
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+.delete-btn {
+  background-color: red;
   color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.delete-btn:hover {
+  background-color: darkred;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+/* src/Modal.css */
+.deletemodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.deletemodal.show {
+  display: block;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Table scrollbar */
+.table-container {
+  width: 100%;
+  overflow: auto;
+}
+
+.fixed-header {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fixed-header thead {
+  display: table;
+  width: calc(100% - 17px); /* Adjust the width for the scrollbar */
+  table-layout: fixed;
+}
+
+.fixed-header tbody {
+  display: block;
+  max-height: 400px; /* Adjust as necessary */
+  overflow-y: auto;
+  width: 100%;
+}
+
+.fixed-header th, .fixed-header td {
+  width: 11.11%; /* Adjust according to the number of columns */
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.fixed-header th {
+  background-color: #4CAF50;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+button {
+  margin: 0 5px;
 }
